@@ -278,6 +278,18 @@
     color:var(--accent2);
   }
 
+  .timeline-left{ position:relative; margin:1rem 0 0; max-width:640px; padding-left:30px; text-align:left; }
+  .timeline-left::before{
+    content:""; position:absolute; left:6px; top:6px; bottom:6px;
+    width:2px; background:var(--line);
+  }
+  .timeline-left .t-item{ padding-left:0; }
+  .timeline-left .t-dot{
+    position:absolute; left:-30px; top:4px; margin-bottom:0;
+  }
+  .timeline-left .t-item:not(:last-child)::after{ display:none; }
+  .timeline-left .t-desc{ margin:0; }
+
   .certs-grid{
     margin-top:2.6rem;
     display:grid;
@@ -460,7 +472,7 @@
   <section class="hero" id="accueil">
     <div class="hero-glow"></div>
     <div class="wrap hero-inner">
-      <h1>Ndeye Ramatoulaye<br><span class="accent">Ndoye Fall</span></h1>
+      <h1>Ndeye Ramatoulaye Ndoye<br><span class="accent">FALL</span></h1>
       <p class="hero-role">Ingénieure Statisticienne Économiste en fin de formation à l'ENSAE Pierre Ndiaye, Dakar</p>
       <p class="hero-pitch"><strong>Moi, c'est Ramatoulaye.</strong> Je prends les données à l'état brut et j'en fais des décisions. Passionnée de data science et d'intelligence artificielle, formée à l'ENSAE, je crois en la donnée au service de causes qui comptent.</p>
       <div class="hero-actions">
@@ -494,13 +506,13 @@
   </section>
 
   <!-- PARCOURS / TIMELINE -->
-  <section id="parcours">
-    <div class="wrap">
-      <div class="eyebrow">Parcours</div>
-      <h2 class="section-title reveal">Expérience professionnelle</h2>
-      <p class="section-lede reveal">Des enquêtes de terrain aux partenariats institutionnels, une pratique construite mission après mission.</p>
+  <section id="parcours" style="text-align:left;">
+    <div class="wrap" style="text-align:left;">
+      <div class="eyebrow" style="text-align:left;">Parcours</div>
+      <h2 class="section-title reveal" style="text-align:left;">Expérience professionnelle</h2>
+      <p class="section-lede reveal" style="text-align:left; margin-left:0;">Des enquêtes de terrain aux partenariats institutionnels, une pratique construite mission après mission.</p>
 
-      <div class="timeline">
+      <div class="timeline timeline-left">
         <div class="t-item reveal">
           <span class="t-dot"></span>
           <span class="t-year">2026</span>
@@ -508,14 +520,6 @@
           <div class="t-org">UNHCR, Matam, Sénégal</div>
           <div class="t-desc">Enquête de terrain sur les conditions de vie des ménages réfugiés.</div>
           <span class="t-tool">KoboCollect</span>
-        </div>
-
-        <div class="t-item reveal">
-          <span class="t-dot"></span>
-          <span class="t-year">Janvier à mai 2026</span>
-          <div class="t-title">Sponsorship & Partnership Coordinator, Hult Prize</div>
-          <div class="t-org">Hult Prize National Stage, Sénégal</div>
-          <div class="t-desc">Démarchage d'institutions (UNESCO, WAVE Digital Finance et d'autres) pour mobiliser des partenaires autour de la plus grande compétition d'entrepreneuriat social au monde.</div>
         </div>
 
         <div class="t-item reveal">
@@ -528,10 +532,10 @@
         </div>
       </div>
 
-      <h2 class="section-title reveal" style="margin-top:70px;">Formation</h2>
-      <p class="section-lede reveal">Une trajectoire académique construite pas à pas, portée par la curiosité et la rigueur.</p>
+      <h2 class="section-title reveal" style="margin-top:70px; text-align:left;">Formation académique</h2>
+      <p class="section-lede reveal" style="text-align:left; margin-left:0;">Une trajectoire académique construite pas à pas, portée par la curiosité et la rigueur.</p>
 
-      <div class="timeline">
+      <div class="timeline timeline-left">
         <div class="t-item reveal">
           <span class="t-dot"></span>
           <span class="t-year">2024 à 2027, en cours</span>
@@ -554,25 +558,28 @@
         </div>
       </div>
 
-      <div class="certs-grid reveal">
-        <div class="cert-card">
+      <h2 class="section-title reveal" style="margin-top:70px; text-align:left;">Certifications</h2>
+      <p class="section-lede reveal" style="text-align:left; margin-left:0;">Des formations complémentaires pour élargir mes compétences au fil des besoins.</p>
+
+      <div class="certs-grid reveal" style="justify-content:flex-start;">
+        <div class="cert-card" style="align-items:flex-start; text-align:left;">
           <span class="c-year">2026</span>
-          <span class="c-name">Atelier d'élaboration d'un lexique de statistiques sensibles au genre</span>
+          <span class="c-name">Certificat en lexique de statistiques sensibles au genre</span>
           <span class="c-org">ENSAE</span>
         </div>
-        <div class="cert-card">
+        <div class="cert-card" style="align-items:flex-start; text-align:left;">
           <span class="c-year">2026</span>
-          <span class="c-name">Analyse de données spatiales et SIG</span>
+          <span class="c-name">Certificat en analyse de données spatiales et SIG</span>
           <span class="c-org">Issa Diakité, enseignant chercheur, UCAD</span>
         </div>
-        <div class="cert-card">
+        <div class="cert-card" style="align-items:flex-start; text-align:left;">
           <span class="c-year">2024</span>
-          <span class="c-name">MEAL Essentials</span>
+          <span class="c-name">Certificat en MEAL Essentials</span>
           <span class="c-org">Disaster Ready Organization</span>
         </div>
-        <div class="cert-card">
+        <div class="cert-card" style="align-items:flex-start; text-align:left;">
           <span class="c-year">2018</span>
-          <span class="c-name">English Access Microscholarship</span>
+          <span class="c-name">Certificat en anglais, English Access Microscholarship</span>
           <span class="c-org">Ambassade des États Unis au Sénégal</span>
         </div>
       </div>
