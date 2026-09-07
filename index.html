@@ -53,6 +53,7 @@
     max-width:var(--maxw);
     margin:0 auto;
     padding:0 clamp(20px, 5vw, 48px);
+    text-align:center;
   }
 
   .eyebrow{
@@ -75,7 +76,7 @@
     max-width:60ch;
     color:var(--soft);
     font-size:1.02rem;
-    margin-bottom:2.6rem;
+    margin:0 auto 2.6rem;
   }
 
   section{ padding:clamp(56px, 8vw, 96px) 0; }
@@ -180,7 +181,7 @@
     background:radial-gradient(circle, rgba(76,141,255,0.18), transparent 70%);
     pointer-events:none;
   }
-  .hero-inner{ position:relative; z-index:1; }
+  .hero-inner{ position:relative; z-index:1; text-align:center; display:flex; flex-direction:column; align-items:center; }
 
   .hero h1{
     font-size:clamp(2.4rem, 6vw, 4rem);
@@ -205,11 +206,11 @@
     max-width:58ch;
     font-size:1.08rem;
     color:var(--soft-2);
-    margin-bottom:2.2rem;
+    margin:0 auto 2.2rem;
   }
   .hero-pitch strong{ color:var(--ink); }
 
-  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
 
   /* ---------- ABOUT ---------- */
   .about-grid{
@@ -236,7 +237,7 @@
   }
   .fact-value{ font-weight:700; font-size:1.05rem; }
 
-  .qualities{ display:flex; flex-wrap:wrap; gap:10px; margin-top:1.6rem; }
+  .qualities{ display:flex; flex-wrap:wrap; gap:10px; margin-top:1.6rem; justify-content:center; }
   .chip{
     font-size:0.85rem;
     padding:8px 15px;
@@ -249,23 +250,27 @@
   @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; } }
 
   /* ---------- TIMELINE ---------- */
-  .timeline{ position:relative; margin-top:1rem; padding-left:30px; }
-  .timeline::before{
-    content:""; position:absolute; left:6px; top:6px; bottom:6px;
-    width:2px; background:var(--line);
-  }
-  .t-item{ position:relative; padding-bottom:36px; }
+  .timeline{ position:relative; margin:1rem auto 0; max-width:640px; }
+  .t-item{ position:relative; padding:0 0 40px; }
   .t-item:last-child{ padding-bottom:0; }
   .t-dot{
-    position:absolute; left:-30px; top:4px;
+    position:relative;
+    display:inline-block;
     width:14px; height:14px; border-radius:50%;
     background:var(--accent);
     box-shadow:0 0 0 4px var(--bg-soft);
+    margin-bottom:14px;
+  }
+  .t-item:not(:last-child)::after{
+    content:"";
+    position:absolute; left:50%; top:14px; bottom:0;
+    width:2px; background:var(--line);
+    transform:translateX(-50%);
   }
   .t-year{ font-size:0.83rem; color:var(--accent2); font-weight:700; margin-bottom:4px; display:block; }
   .t-title{ font-weight:700; font-size:1.15rem; margin-bottom:2px; }
   .t-org{ font-size:0.95rem; color:var(--soft); margin-bottom:6px; }
-  .t-desc{ font-size:0.95rem; color:var(--soft); max-width:58ch; }
+  .t-desc{ font-size:0.95rem; color:var(--soft); max-width:58ch; margin:0 auto; }
   .t-tool{
     display:inline-block; margin-top:8px; font-size:0.74rem;
     padding:3px 10px; border-radius:999px;
@@ -281,7 +286,7 @@
   }
   @media (max-width:720px){ .certs-grid{ grid-template-columns:1fr; } }
   .cert-card{
-    display:flex; flex-direction:column; gap:6px;
+    display:flex; flex-direction:column; gap:6px; align-items:center; text-align:center;
     padding:18px 20px; border-radius:12px;
     border:1px solid var(--line); background:var(--card);
   }
@@ -304,7 +309,7 @@
     border-radius:var(--radius);
     padding:26px;
     min-height:220px;
-    display:flex; flex-direction:column; justify-content:space-between;
+    display:flex; flex-direction:column; justify-content:space-between; align-items:center; text-align:center;
     transition:border-color .2s ease, transform .2s ease, background .2s ease;
   }
   .proj-block:hover{
@@ -319,16 +324,14 @@
     background:rgba(0,217,163,0.1);
     padding:5px 11px; border-radius:7px;
     margin-bottom:16px;
-    align-self:flex-start;
   }
-  .proj-year{ font-size:0.78rem; color:var(--soft); float:right; }
+  .proj-year{ font-size:0.78rem; color:var(--soft); }
   .proj-title{ font-weight:700; font-size:1.14rem; margin-bottom:8px; }
   .proj-desc{ font-size:0.93rem; color:var(--soft); margin-bottom:18px; }
   .proj-stack{ font-size:0.78rem; color:#69749A; margin-bottom:16px; }
   .proj-link{
     font-size:0.83rem; font-weight:700; color:var(--accent);
     display:inline-flex; align-items:center; gap:6px;
-    align-self:flex-start;
   }
   .proj-link:hover{ color:var(--accent2); }
 
@@ -388,11 +391,11 @@
     border-radius:var(--radius);
     padding:clamp(24px,4vw,36px);
     background:var(--card);
-    display:grid;
-    grid-template-columns:auto 1fr;
-    gap:24px;
+    display:flex; flex-direction:column; align-items:center; text-align:center;
+    gap:16px;
+    max-width:680px;
+    margin:0 auto;
   }
-  @media (max-width:640px){ .activity-card{ grid-template-columns:1fr; } }
   .activity-icon{
     width:52px; height:52px; border-radius:12px;
     background:linear-gradient(135deg, var(--accent), var(--accent2));
@@ -407,10 +410,10 @@
   /* ---------- CONTACT ---------- */
   .contact-section{ position:relative; overflow:hidden; }
   .contact-grid{
-    display:flex; justify-content:space-between; align-items:flex-end;
-    flex-wrap:wrap; gap:40px;
+    display:flex; flex-direction:column; align-items:center;
+    gap:28px;
   }
-  .contact-links{ display:flex; flex-direction:column; gap:14px; }
+  .contact-links{ display:flex; flex-direction:column; align-items:center; gap:14px; }
   .contact-link{
     display:flex; align-items:center; gap:12px;
     font-size:clamp(1.05rem,2.2vw,1.35rem); font-weight:700;
@@ -423,6 +426,7 @@
   .contact-meta{
     font-size:0.9rem; color:var(--soft);
     max-width:280px; line-height:1.7;
+    text-align:center;
   }
 
   .foot-note{
@@ -458,11 +462,11 @@
     <div class="wrap hero-inner">
       <h1>Ndeye Ramatoulaye<br><span class="accent">Ndoye Fall</span></h1>
       <p class="hero-role">Ingénieure Statisticienne Économiste en fin de formation à l'ENSAE Pierre Ndiaye, Dakar</p>
-      <p class="hero-pitch"><strong>Moi, c'est Ramatoulaye.</strong> Je prends les données à l'état brut, un tableau Excel, un questionnaire de terrain, un flux en temps réel, et j'en fais des décisions. Bilingue français anglais, formée à l'ENSAE, rodée aux enquêtes de terrain avec l'ANSD et l'UNHCR.</p>
+      <p class="hero-pitch"><strong>Moi, c'est Ramatoulaye.</strong> Je prends les données à l'état brut et j'en fais des décisions. Passionnée de data science et d'intelligence artificielle, formée à l'ENSAE, je crois en la donnée au service de causes qui comptent.</p>
       <div class="hero-actions">
-        <a href="CV_NRNF.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
-        <a href="#projets" class="btn btn-outline">Voir mes projets</a>
-        <a href="#contact" class="btn btn-outline">Me contacter</a>
+        <a href="https://vimdie.github.io/portfolio/CV_NRNF.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+        <a href="https://vimdie.github.io/portfolio/#projets" class="btn btn-outline">Voir mes projets</a>
+        <a href="https://vimdie.github.io/portfolio/#contact" class="btn btn-outline">Me contacter</a>
       </div>
     </div>
   </section>
@@ -474,7 +478,7 @@
       <h2 class="section-title reveal">Rigueur académique, data science, IA et innovation au service de l'impact social</h2>
       <p class="section-lede reveal">À l'intersection de la théorie statistique, de l'entrepreneuriat social, de la data science et de l'IA.</p>
 
-      <div class="about-text reveal" style="max-width:74ch;">
+      <div class="about-text reveal" style="max-width:74ch; margin:0 auto;">
         <p>Passionnée de <strong>data science</strong> et d'<strong>intelligence artificielle</strong>, je crois profondément que la donnée et la technologie peuvent nourrir des décisions plus justes et faire émerger des solutions innovantes à fort impact social. Mon objectif : mettre la data au service du bien commun, le <strong>data for good</strong>.</p>
         <p>Je m'intéresse particulièrement à l'<strong>économie du développement</strong> et à la <strong>biostatistique</strong>, deux terrains où la rigueur statistique rencontre des enjeux humains concrets. Bilingue français anglais, formée à l'ENSAE, je suis ouverte aux collaborations pour mettre mes compétences à disposition, construire des solutions innovantes et prendre des décisions data driven.</p>
       </div>
@@ -525,7 +529,7 @@
       </div>
 
       <h2 class="section-title reveal" style="margin-top:70px;">Formation</h2>
-      <p class="section-lede reveal">Une trajectoire qui commence par une série S2 et n'a plus arrêté d'additionner.</p>
+      <p class="section-lede reveal">Une trajectoire académique construite pas à pas, portée par la curiosité et la rigueur.</p>
 
       <div class="timeline">
         <div class="t-item reveal">
@@ -679,7 +683,7 @@
     <div class="wrap">
       <div class="eyebrow">Compétences</div>
       <h2 class="section-title reveal">Outils, compétences et langues</h2>
-      <p class="section-lede reveal">Les outils qui passent de ma tête à l'écran, du terrain au tableau de bord.</p>
+      <p class="section-lede reveal">Des outils choisis pour transformer une intuition en résultat mesurable.</p>
 
       <div class="skills-grid">
         <div>
@@ -716,6 +720,8 @@
               <div class="tool-card"><div class="tool-icon"><img src="https://cdn.simpleicons.org/python/4C8DFF" alt="" loading="lazy" onerror="let p=this.parentElement;p.classList.add('fallback');p.textContent='Py';"></div><span class="tool-name">Python</span></div>
               <div class="tool-card"><div class="tool-icon"><img src="https://cdn.simpleicons.org/jupyter/F37626" alt="" loading="lazy" onerror="let p=this.parentElement;p.classList.add('fallback');p.textContent='Jp';"></div><span class="tool-name">Jupyter Notebook</span></div>
               <div class="tool-card"><div class="tool-icon"><img src="https://cdn.simpleicons.org/html5/E34F26" alt="" loading="lazy" onerror="let p=this.parentElement;p.classList.add('fallback');p.textContent='H5';"></div><span class="tool-name">HTML</span></div>
+              <div class="tool-card"><div class="tool-icon"><img src="https://cdn.simpleicons.org/css3/1572B6" alt="" loading="lazy" onerror="let p=this.parentElement;p.classList.add('fallback');p.textContent='CSS';"></div><span class="tool-name">CSS</span></div>
+              <div class="tool-card"><div class="tool-icon"><img src="https://cdn.simpleicons.org/javascript/F7DF1E" alt="" loading="lazy" onerror="let p=this.parentElement;p.classList.add('fallback');p.textContent='JS';"></div><span class="tool-name">JavaScript</span></div>
               <div class="tool-card"><div class="tool-icon"><img src="https://cdn.simpleicons.org/latex/008080" alt="" loading="lazy" onerror="let p=this.parentElement;p.classList.add('fallback');p.textContent='Tx';"></div><span class="tool-name">TeX</span></div>
             </div>
           </div>
@@ -748,7 +754,7 @@
   <section id="activites">
     <div class="wrap">
       <div class="eyebrow">Engagement</div>
-      <h2 class="section-title reveal">Activités extrascolaires</h2>
+      <h2 class="section-title reveal">Au service de l'entrepreneuriat social</h2>
       <p class="section-lede reveal">Parce qu'un bon dossier statistique ne suffit pas toujours à convaincre un partenaire.</p>
       <div class="activity-card reveal">
         <div class="activity-icon" aria-hidden="true">
@@ -768,10 +774,10 @@
     <div class="wrap">
       <div class="eyebrow">Contact</div>
       <h2 class="section-title">Discutons d'un stage ou d'un projet</h2>
-      <p class="section-lede">Un stage à pourvoir, une donnée à faire parler, un café à distance : écrivez moi. Disponible pour un stage en analyse de données, gestion de projets ou finance.</p>
+      <p class="section-lede">Un stage à pourvoir, une donnée à faire parler : écrivez moi. Ouverte à toute collaboration orientée data science, suivi évaluation, étude ou projet statistique, IA.</p>
 
       <div class="hero-actions" style="margin-bottom:44px;">
-        <a href="CV_NRNF.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+        <a href="https://vimdie.github.io/portfolio/CV_NRNF.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
       </div>
 
       <div class="contact-grid">
