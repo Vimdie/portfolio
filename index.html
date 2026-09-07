@@ -4,27 +4,23 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Ndeye Ramatoulaye Ndoye Fall — Statisticienne Économiste</title>
-<meta name="description" content="Portfolio de Ndeye Ramatoulaye Ndoye Fall, élève ingénieure statisticienne économiste à l'ENSAE — data, statistiques, terrain.">
+<meta name="description" content="Portfolio de Ndeye Ramatoulaye Ndoye Fall, élève ingénieure statisticienne économiste à l'ENSAE.">
 
 <style>
   :root{
-    --font: 'Times New Roman', Times, 'Liberation Serif', Georgia, serif;
-    --navy:#0B2E59;
-    --blue:#1D5FA8;
-    --blue-mid:#3D77BE;
-    --blue-soft:#6C93C7;
-    --blue-pale:#EAF2FB;
-    --blue-pale-2:#F5F9FD;
-    --white:#FFFFFF;
-    --ink:#16213A;
-    --ink-soft:#48586E;
-    --line: rgba(11,46,89,0.16);
-    --navy-a: rgba(11,46,89,0.10);
-    --blue-a: rgba(29,95,168,0.10);
-    --blue-mid-a: rgba(61,119,190,0.12);
-    --blue-soft-a: rgba(108,147,199,0.16);
-    --radius: 14px;
-    --maxw: 1140px;
+    --bg:#0A0F1E;
+    --bg-soft:#0D1426;
+    --card:#131B30;
+    --card-hover:#17203B;
+    --line:#232E4A;
+    --ink:#EDF1FA;
+    --soft:#8B96B3;
+    --soft-2:#C7D0E8;
+    --accent:#4C8DFF;
+    --accent2:#00D9A3;
+    --radius:16px;
+    --maxw:1120px;
+    --font:'Segoe UI', system-ui, Arial, sans-serif;
   }
 
   *{ box-sizing:border-box; font-family:var(--font); }
@@ -36,7 +32,7 @@
 
   body{
     margin:0;
-    background:var(--white);
+    background:var(--bg);
     color:var(--ink);
     line-height:1.65;
   }
@@ -45,12 +41,12 @@
   ul{ list-style:none; margin:0; padding:0; }
   img{ max-width:100%; display:block; }
 
-  ::selection{ background:var(--blue); color:#fff; }
+  ::selection{ background:var(--accent); color:#04101F; }
 
   :focus-visible{
-    outline: 2.5px solid var(--blue);
+    outline: 2.5px solid var(--accent);
     outline-offset: 3px;
-    border-radius: 3px;
+    border-radius: 4px;
   }
 
   .wrap{
@@ -60,210 +56,160 @@
   }
 
   .eyebrow{
-    font-size:0.8rem;
-    font-style:italic;
+    font-size:0.78rem;
+    font-weight:700;
     letter-spacing:0.1em;
     text-transform:uppercase;
-    display:inline-flex;
-    align-items:center;
-    gap:0.55em;
-    color:var(--blue);
-    margin-bottom:1.1rem;
-  }
-  .eyebrow .dot{
-    width:8px; height:8px; border-radius:50%;
-    display:inline-block;
-    flex:none;
+    color:var(--accent2);
+    margin-bottom:14px;
   }
 
-  h1,h2,h3{ line-height:1.12; margin:0; }
+  h1,h2,h3{ line-height:1.15; margin:0; }
 
   .section-title{
-    font-size:clamp(1.7rem, 3.2vw, 2.5rem);
-    font-weight:700;
-    margin-bottom:0.6rem;
-    color:var(--navy);
+    font-size:clamp(1.7rem, 3.2vw, 2.3rem);
+    font-weight:800;
+    margin-bottom:0.5rem;
   }
   .section-lede{
     max-width:60ch;
-    color:var(--ink-soft);
-    font-size:1.08rem;
-    font-style:italic;
+    color:var(--soft);
+    font-size:1.02rem;
     margin-bottom:2.6rem;
   }
 
-  section{ padding:clamp(60px, 9vw, 108px) 0; }
+  section{ padding:clamp(56px, 8vw, 96px) 0; }
   section + section{ border-top:1px solid var(--line); }
 
   /* ---------- NAV ---------- */
   header.site-nav{
     position:fixed; top:0; left:0; right:0; z-index:100;
-    background:rgba(255,255,255,0.92);
-    backdrop-filter:blur(8px);
-    -webkit-backdrop-filter:blur(8px);
+    background:rgba(10,15,30,0.85);
+    backdrop-filter:blur(10px);
+    -webkit-backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
   .nav-inner{
     max-width:var(--maxw);
     margin:0 auto;
-    padding:12px clamp(20px, 5vw, 48px) 0;
+    padding:16px clamp(20px, 5vw, 48px);
     display:flex; align-items:center; justify-content:space-between;
     gap:20px;
   }
   .brand{
-    font-weight:700;
-    font-size:1.02rem;
+    font-weight:800;
+    font-size:1rem;
     display:flex; align-items:center; gap:10px;
-    padding-bottom:12px;
     white-space:nowrap;
   }
   .brand .mark{
-    width:34px; height:34px; border-radius:50%;
-    background:var(--navy);
-    color:var(--white);
+    width:32px; height:32px; border-radius:9px;
+    background:linear-gradient(135deg, var(--accent), var(--accent2));
+    color:#04101F;
     display:flex; align-items:center; justify-content:center;
-    font-size:0.78rem;
-    font-weight:700;
-    border:2px solid var(--blue);
+    font-size:0.74rem;
+    font-weight:800;
   }
   .nav-links{
-    display:flex; gap:6px; align-items:flex-end;
+    display:flex; gap:8px; align-items:center;
     overflow-x:auto;
     scrollbar-width:none;
-    -ms-overflow-style:none;
   }
   .nav-links::-webkit-scrollbar{ display:none; }
   .nav-links a{
-    font-size:0.86rem;
-    letter-spacing:0.03em;
-    text-transform:uppercase;
-    color:var(--navy);
+    font-size:0.85rem;
+    color:var(--soft);
     white-space:nowrap;
-    padding:11px 18px;
-    border:1px solid var(--line);
-    border-bottom:none;
-    border-radius:8px 8px 0 0;
-    background:var(--blue-pale-2);
-    border-bottom:3px solid transparent;
-    transition:background .2s ease, color .2s ease, border-color .2s ease;
+    font-weight:600;
+    transition:color .2s ease, background .2s ease;
+    padding:8px 14px;
+    border-radius:8px;
   }
-  .nav-links a:hover{ background:var(--blue-pale); }
-  .nav-links a.active{
-    background:var(--white);
-    color:var(--blue);
-    font-weight:700;
-    border-color:var(--line);
-    border-bottom-color:var(--blue);
+  .nav-links a:hover{ color:var(--ink); background:var(--card); }
+  .nav-links a.active{ color:var(--ink); background:var(--card); }
+  .nav-cta{
+    background:linear-gradient(90deg, var(--accent), var(--accent2));
+    color:#04101F !important;
+    padding:9px 18px !important;
+    border-radius:9px;
+    font-weight:700 !important;
   }
-  .nav-links a.nav-cta{
-    background:var(--blue);
-    color:var(--white) !important;
-    border-color:var(--blue);
-  }
-  .nav-links a.nav-cta:hover{ background:var(--navy); border-color:var(--navy); }
+  .nav-cta:hover{ background:linear-gradient(90deg, var(--accent), var(--accent2)) !important; opacity:0.9; }
 
-  @media (max-width:640px){
-    .nav-inner{ flex-direction:column; align-items:stretch; gap:8px; padding-top:10px; }
-    .brand{ padding-bottom:0; }
-    .nav-links{ padding-bottom:2px; }
+  @media (max-width:720px){
+    .nav-links{ gap:4px; }
+    .nav-links a{ font-size:0.76rem; padding:7px 10px; }
   }
+
+
+  /* ---------- BUTTONS ---------- */
+  .btn{
+    font-size:0.92rem;
+    font-weight:700;
+    padding:14px 26px;
+    border-radius:10px;
+    display:inline-flex; align-items:center; gap:9px;
+    border:none;
+    cursor:pointer;
+    transition:transform .2s ease, box-shadow .2s ease, background .2s ease;
+  }
+  .btn-primary{
+    background:linear-gradient(90deg, var(--accent), var(--accent2));
+    color:#04101F;
+    box-shadow:0 12px 28px -10px rgba(76,141,255,0.5);
+  }
+  .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 16px 32px -8px rgba(76,141,255,0.6); }
+  .btn-outline{
+    background:transparent;
+    color:var(--ink);
+    border:1.5px solid var(--line);
+  }
+  .btn-outline:hover{ border-color:var(--accent); transform:translateY(-2px); }
 
   /* ---------- HERO ---------- */
   .hero{
-    position:relative;
-    min-height:100svh;
+    min-height:92vh;
     display:flex; align-items:center;
-    padding-top:112px;
+    padding-top:100px;
+    position:relative;
     overflow:hidden;
-    background:linear-gradient(180deg, var(--blue-pale-2) 0%, var(--white) 70%);
   }
-  .hero-canvas{
-    position:absolute; inset:0;
-    width:100%; height:100%;
-    z-index:0;
-    opacity:0.85;
+  .hero-glow{
+    position:absolute; top:-10%; right:-10%;
+    width:60%; height:70%;
+    background:radial-gradient(circle, rgba(76,141,255,0.18), transparent 70%);
+    pointer-events:none;
   }
-  .hero-inner{
-    position:relative; z-index:1;
-    width:100%;
-  }
-  .hero-tag{
-    font-size:0.86rem;
-    font-style:italic;
-    letter-spacing:0.14em;
-    text-transform:uppercase;
-    color:var(--blue);
-    margin-bottom:1.4rem;
-    display:flex; align-items:center; gap:0.7em;
-  }
-  .hero-tag .rule{ width:34px; height:1px; background:var(--blue); }
+  .hero-inner{ position:relative; z-index:1; }
 
   .hero h1{
-    font-size:clamp(2.4rem, 6.6vw, 4.6rem);
-    font-weight:700;
+    font-size:clamp(2.4rem, 6vw, 4rem);
+    font-weight:800;
     margin-bottom:0.3em;
-    color:var(--navy);
   }
-  .hero h1 .accent{ color:var(--blue); }
+  .hero h1 .accent{
+    background:linear-gradient(90deg, var(--accent), var(--accent2));
+    -webkit-background-clip:text;
+    background-clip:text;
+    color:transparent;
+  }
 
   .hero-role{
-    font-size:clamp(1.1rem, 2.2vw, 1.5rem);
-    color:var(--ink-soft);
-    font-style:italic;
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    color:var(--soft-2);
     margin-bottom:1.3rem;
-    max-width:38ch;
+    max-width:42ch;
   }
 
   .hero-pitch{
     max-width:58ch;
-    font-size:1.12rem;
-    color:var(--ink);
-    margin-bottom:2.3rem;
+    font-size:1.08rem;
+    color:var(--soft-2);
+    margin-bottom:2.2rem;
   }
-  .hero-pitch strong{ color:var(--navy); }
+  .hero-pitch strong{ color:var(--ink); }
 
-  .hero-actions{
-    display:flex; gap:14px; flex-wrap:wrap;
-  }
-  .btn{
-    font-size:0.92rem;
-    letter-spacing:0.02em;
-    padding:14px 26px;
-    border-radius:8px;
-    display:inline-flex; align-items:center; gap:9px;
-    transition:transform .2s ease, box-shadow .2s ease, background .2s ease, color .2s ease;
-    border:1.5px solid var(--navy);
-    font-weight:700;
-  }
-  .btn-solid{ background:var(--navy); color:var(--white); }
-  .btn-solid:hover{ background:var(--blue); border-color:var(--blue); transform:translateY(-2px); }
-  .btn-outline{ background:transparent; color:var(--navy); }
-  .btn-outline:hover{ background:var(--navy); color:var(--white); transform:translateY(-2px); }
-
-  .hero-scroll{
-    position:absolute; bottom:26px; left:50%; transform:translateX(-50%);
-    font-size:0.72rem; letter-spacing:0.14em;
-    color:var(--blue); text-transform:uppercase; font-style:italic;
-    display:flex; flex-direction:column; align-items:center; gap:8px;
-    z-index:1;
-  }
-  .hero-scroll .line{ width:1px; height:34px; background:linear-gradient(var(--blue), transparent); animation:scrollpulse 1.8s ease infinite; }
-  @keyframes scrollpulse{ 0%,100%{opacity:.25;} 50%{opacity:1;} }
-
-  /* ---------- ORG BADGES ---------- */
-  .badge-row{ display:flex; flex-wrap:wrap; gap:8px; margin-top:10px; }
-  .org-badge{
-    display:inline-flex; align-items:center;
-    padding:5px 11px;
-    border-radius:7px;
-    background:var(--navy);
-    color:var(--white);
-    font-size:0.7rem;
-    font-weight:700;
-    letter-spacing:0.03em;
-    white-space:nowrap;
-  }
-  .org-badge.alt{ background:var(--blue); }
+  .hero-actions{ display:flex; gap:14px; flex-wrap:wrap; }
 
   /* ---------- ABOUT ---------- */
   .about-grid{
@@ -272,159 +218,119 @@
     gap:clamp(28px, 5vw, 64px);
     align-items:start;
   }
-  .about-text p{ color:var(--ink); font-size:1.06rem; margin:0 0 1.15em; }
+  .about-text p{ color:var(--soft-2); font-size:1.03rem; margin:0 0 1.15em; }
   .about-text p:last-child{ margin-bottom:0; }
-  .about-text strong{ color:var(--navy); }
+  .about-text strong{ color:var(--ink); }
 
   .fact-card{
-    background:var(--blue-pale-2);
+    background:var(--card);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:22px 24px;
+    padding:20px 22px;
     margin-bottom:14px;
   }
   .fact-card:last-child{ margin-bottom:0; }
   .fact-label{
-    font-size:0.74rem; letter-spacing:0.08em; font-style:italic;
-    text-transform:uppercase; color:var(--blue); margin-bottom:6px;
+    font-size:0.72rem; letter-spacing:0.08em;
+    text-transform:uppercase; color:var(--accent2); margin-bottom:6px; font-weight:700;
   }
-  .fact-value{ font-weight:700; font-size:1.1rem; color:var(--navy); }
+  .fact-value{ font-weight:700; font-size:1.05rem; }
 
-  .qualities{
-    display:flex; flex-wrap:wrap; gap:10px; margin-top:1.6rem;
-  }
+  .qualities{ display:flex; flex-wrap:wrap; gap:10px; margin-top:1.6rem; }
   .chip{
-    font-size:0.86rem;
+    font-size:0.85rem;
     padding:8px 15px;
     border-radius:999px;
     border:1px solid var(--line);
-    display:inline-flex; align-items:center; gap:8px;
-    background:var(--white);
+    background:var(--card);
+    color:var(--soft-2);
   }
-  .chip .dot{ width:7px; height:7px; border-radius:50%; }
 
-  @media (max-width:820px){
-    .about-grid{ grid-template-columns:1fr; }
-  }
+  @media (max-width:820px){ .about-grid{ grid-template-columns:1fr; } }
 
   /* ---------- TIMELINE ---------- */
-  .timeline{
-    position:relative;
-    margin-top:1rem;
-    padding-left:34px;
-  }
+  .timeline{ position:relative; margin-top:1rem; padding-left:30px; }
   .timeline::before{
-    content:"";
-    position:absolute; left:8px; top:6px; bottom:6px;
-    width:2px;
-    background:var(--line);
+    content:""; position:absolute; left:6px; top:6px; bottom:6px;
+    width:2px; background:var(--line);
   }
-  .t-item{
-    position:relative;
-    padding-bottom:38px;
-  }
+  .t-item{ position:relative; padding-bottom:36px; }
   .t-item:last-child{ padding-bottom:0; }
   .t-dot{
-    position:absolute; left:-34px; top:4px;
-    width:16px; height:16px; border-radius:50%;
-    border:3px solid var(--white);
-    box-shadow:0 0 0 1px var(--line);
+    position:absolute; left:-30px; top:4px;
+    width:14px; height:14px; border-radius:50%;
+    background:var(--accent);
+    box-shadow:0 0 0 4px var(--bg-soft);
   }
-  .t-year{
-    font-size:0.85rem; font-style:italic;
-    color:var(--blue); margin-bottom:4px; display:block;
-  }
-  .t-title{ font-weight:700; font-size:1.2rem; margin-bottom:2px; color:var(--navy); }
-  .t-org{ font-size:0.98rem; color:var(--ink-soft); margin-bottom:6px; }
-  .t-desc{ font-size:0.98rem; color:var(--ink-soft); max-width:58ch; }
+  .t-year{ font-size:0.83rem; color:var(--accent2); font-weight:700; margin-bottom:4px; display:block; }
+  .t-title{ font-weight:700; font-size:1.15rem; margin-bottom:2px; }
+  .t-org{ font-size:0.95rem; color:var(--soft); margin-bottom:6px; }
+  .t-desc{ font-size:0.95rem; color:var(--soft); max-width:58ch; }
   .t-tool{
-    display:inline-block; margin-top:8px;
-    font-size:0.76rem; font-style:italic;
+    display:inline-block; margin-top:8px; font-size:0.74rem;
     padding:3px 10px; border-radius:999px;
-    background:var(--blue-pale); border:1px solid var(--line);
-    color:var(--navy);
+    background:rgba(0,217,163,0.1); border:1px solid var(--line);
+    color:var(--accent2);
   }
 
-  .certs{
+  .certs-grid{
     margin-top:2.6rem;
-    display:flex; gap:12px; flex-wrap:wrap;
-  }
-  .cert-chip{
-    display:flex; flex-direction:column; gap:6px;
-    padding:14px 18px; border-radius:12px;
-    border:1px solid var(--line); background:var(--white);
-    min-width:220px;
-  }
-  .cert-chip .c-year{ font-size:0.74rem; font-style:italic; color:var(--blue); }
-  .cert-chip .c-name{ font-weight:700; font-size:0.95rem; color:var(--navy); }
-  .cert-chip .c-org{ font-size:0.85rem; color:var(--ink-soft); }
-
-  /* ---------- PROJECTS ---------- */
-  .proj-grid{
     display:grid;
     grid-template-columns:repeat(2, 1fr);
-    gap:24px;
+    gap:14px;
   }
-  @media (max-width:820px){ .proj-grid{ grid-template-columns:1fr; } }
+  @media (max-width:720px){ .certs-grid{ grid-template-columns:1fr; } }
+  .cert-card{
+    display:flex; flex-direction:column; gap:6px;
+    padding:18px 20px; border-radius:12px;
+    border:1px solid var(--line); background:var(--card);
+  }
+  .cert-card .c-year{ font-size:0.74rem; font-weight:700; color:var(--accent2); }
+  .cert-card .c-name{ font-weight:700; font-size:0.98rem; }
+  .cert-card .c-org{ font-size:0.87rem; color:var(--soft); }
 
-  .proj-card{
+  /* ---------- PROJECTS (blocs rectangles) ---------- */
+  .proj-grid{
+    display:grid;
+    grid-template-columns:repeat(3, 1fr);
+    gap:20px;
+  }
+  @media (max-width:920px){ .proj-grid{ grid-template-columns:repeat(2, 1fr); } }
+  @media (max-width:600px){ .proj-grid{ grid-template-columns:1fr; } }
+
+  .proj-block{
+    background:var(--card);
     border:1px solid var(--line);
     border-radius:var(--radius);
-    background:var(--white);
-    display:flex; flex-direction:column;
-    transition:transform .25s ease, box-shadow .25s ease, border-color .25s ease;
-    overflow:hidden;
+    padding:26px;
+    min-height:220px;
+    display:flex; flex-direction:column; justify-content:space-between;
+    transition:border-color .2s ease, transform .2s ease, background .2s ease;
   }
-  .proj-card:hover{
+  .proj-block:hover{
+    border-color:var(--accent);
+    background:var(--card-hover);
     transform:translateY(-4px);
-    box-shadow:0 18px 34px -20px rgba(11,46,89,0.32);
   }
-  .proj-visual{
-    height:150px;
-    background:var(--accent-a, var(--blue-pale));
-    display:flex; align-items:center; justify-content:center;
-    overflow:hidden;
-    border-bottom:1px solid var(--line);
-  }
-  .proj-visual img{ width:100%; height:100%; object-fit:cover; }
-  .proj-visual svg{ width:70%; height:70%; }
-
-  .proj-body{ padding:24px; display:flex; flex-direction:column; flex:1; position:relative; }
   .proj-tag{
-    font-size:0.7rem; letter-spacing:0.06em; font-style:italic;
-    text-transform:uppercase;
-    color:var(--accent, var(--blue));
-    background:var(--accent-a, var(--blue-a));
     display:inline-block;
-    padding:5px 11px; border-radius:999px;
-    margin-bottom:14px;
+    font-size:0.68rem; font-weight:700; letter-spacing:0.03em; text-transform:uppercase;
+    color:var(--accent2);
+    background:rgba(0,217,163,0.1);
+    padding:5px 11px; border-radius:7px;
+    margin-bottom:16px;
     align-self:flex-start;
   }
-  .proj-year{
-    position:absolute; top:24px; right:24px;
-    font-size:0.78rem; font-style:italic; color:var(--ink-soft);
-  }
-  .proj-title{
-    font-weight:700; font-size:1.22rem;
-    margin-bottom:8px; padding-right:46px;
-    color:var(--navy);
-  }
-  .proj-desc{ font-size:0.97rem; color:var(--ink-soft); margin-bottom:16px; flex:1; }
-  .proj-stack{
-    font-size:0.82rem; font-style:italic; color:var(--ink-soft);
-    margin-bottom:16px; line-height:1.5;
-  }
-  .proj-links{ display:flex; gap:10px; flex-wrap:wrap; }
+  .proj-year{ font-size:0.78rem; color:var(--soft); float:right; }
+  .proj-title{ font-weight:700; font-size:1.14rem; margin-bottom:8px; }
+  .proj-desc{ font-size:0.93rem; color:var(--soft); margin-bottom:18px; }
+  .proj-stack{ font-size:0.78rem; color:#69749A; margin-bottom:16px; }
   .proj-link{
-    font-size:0.82rem;
+    font-size:0.83rem; font-weight:700; color:var(--accent);
     display:inline-flex; align-items:center; gap:6px;
-    padding:8px 14px; border-radius:999px;
-    border:1px solid var(--line);
-    transition:background .2s ease, color .2s ease, border-color .2s ease;
+    align-self:flex-start;
   }
-  .proj-link:hover{ background:var(--navy); color:var(--white); border-color:var(--navy); }
-  .proj-link.muted{ color:var(--ink-soft); cursor:default; font-style:italic; }
-  .proj-link.muted:hover{ background:none; color:var(--ink-soft); border-color:var(--line); }
+  .proj-link:hover{ color:var(--accent2); }
 
   /* ---------- SKILLS ---------- */
   .skills-grid{
@@ -437,79 +343,71 @@
   .skill-block{ margin-bottom:2.2rem; }
   .skill-block:last-child{ margin-bottom:0; }
   .skill-block h3{
-    font-size:0.94rem; font-style:italic; letter-spacing:0.05em;
-    text-transform:uppercase; color:var(--blue); margin-bottom:14px; font-weight:700;
+    font-size:0.85rem; letter-spacing:0.05em;
+    text-transform:uppercase; color:var(--accent2); margin-bottom:14px; font-weight:700;
   }
   .tag-cloud{ display:flex; flex-wrap:wrap; gap:9px; }
   .tag{
-    font-size:0.88rem;
+    font-size:0.87rem;
     padding:8px 15px; border-radius:9px;
-    background:var(--blue-pale-2); border:1px solid var(--line);
-    color:var(--navy);
+    background:var(--card); border:1px solid var(--line);
+    color:var(--soft-2);
   }
 
   .lang-row{ margin-bottom:16px; }
   .lang-row:last-child{ margin-bottom:0; }
-  .lang-head{ display:flex; justify-content:space-between; font-size:0.95rem; margin-bottom:6px; }
-  .lang-name{ font-weight:700; color:var(--navy); }
-  .lang-level{ font-size:0.82rem; font-style:italic; color:var(--ink-soft); }
-  .lang-bar{ height:6px; background:var(--blue-pale); border-radius:99px; overflow:hidden; }
-  .lang-bar span{ display:block; height:100%; border-radius:99px; background:var(--blue); }
+  .lang-head{ display:flex; justify-content:space-between; font-size:0.94rem; margin-bottom:6px; }
+  .lang-name{ font-weight:700; }
+  .lang-level{ font-size:0.81rem; color:var(--soft); }
+  .lang-bar{ height:6px; background:var(--line); border-radius:99px; overflow:hidden; }
+  .lang-bar span{ display:block; height:100%; border-radius:99px; background:linear-gradient(90deg, var(--accent), var(--accent2)); }
 
-  /* ---------- ACTIVITIES ---------- */
+  /* ---------- ACTIVITES ---------- */
   .activity-card{
     border:1px solid var(--line);
     border-radius:var(--radius);
-    padding:clamp(24px,4vw,40px);
-    background:linear-gradient(135deg, var(--blue-pale), transparent 65%);
+    padding:clamp(24px,4vw,36px);
+    background:var(--card);
     display:grid;
     grid-template-columns:auto 1fr;
-    gap:26px;
+    gap:24px;
   }
   @media (max-width:640px){ .activity-card{ grid-template-columns:1fr; } }
   .activity-icon{
-    width:56px; height:56px; border-radius:12px;
-    background:var(--navy); color:var(--white);
+    width:52px; height:52px; border-radius:12px;
+    background:linear-gradient(135deg, var(--accent), var(--accent2));
+    color:#04101F;
     display:flex; align-items:center; justify-content:center;
   }
-  .activity-icon svg{ width:26px; height:26px; }
-  .activity-role{ font-size:0.82rem; font-style:italic; color:var(--blue); margin-bottom:6px; }
-  .activity-title{ font-weight:700; font-size:1.3rem; margin-bottom:8px; color:var(--navy); }
-  .activity-desc{ color:var(--ink-soft); font-size:1.01rem; max-width:64ch; }
+  .activity-icon svg{ width:24px; height:24px; }
+  .activity-role{ font-size:0.82rem; color:var(--accent2); margin-bottom:6px; font-weight:700; }
+  .activity-title{ font-weight:700; font-size:1.2rem; margin-bottom:8px; }
+  .activity-desc{ color:var(--soft); font-size:0.98rem; max-width:64ch; }
 
-  /* ---------- CONTACT / FOOTER ---------- */
-  .contact-section{
-    background:var(--navy);
-    color:var(--white);
-    position:relative;
-    overflow:hidden;
-  }
-  .contact-section .eyebrow{ color:var(--blue-soft); }
-  .contact-section .section-lede{ color:rgba(255,255,255,0.72); }
-  .contact-section .section-title{ color:var(--white); }
-
+  /* ---------- CONTACT ---------- */
+  .contact-section{ position:relative; overflow:hidden; }
   .contact-grid{
     display:flex; justify-content:space-between; align-items:flex-end;
     flex-wrap:wrap; gap:40px;
   }
-  .contact-links{ display:flex; flex-direction:column; gap:16px; }
+  .contact-links{ display:flex; flex-direction:column; gap:14px; }
   .contact-link{
     display:flex; align-items:center; gap:12px;
-    font-size:clamp(1.1rem,2.4vw,1.5rem); font-weight:700;
-    padding-bottom:10px; border-bottom:1px solid rgba(255,255,255,0.2);
+    font-size:clamp(1.05rem,2.2vw,1.35rem); font-weight:700;
+    padding-bottom:10px; border-bottom:1px solid var(--line);
     transition:color .2s ease, border-color .2s ease, transform .2s ease;
   }
-  .contact-link:hover{ color:var(--blue-soft); border-color:var(--blue-soft); transform:translateX(4px); }
+  .contact-link:hover{ color:var(--accent2); border-color:var(--accent2); transform:translateX(4px); }
   .contact-link svg{ width:20px; height:20px; flex:none; }
 
   .contact-meta{
-    font-size:0.9rem; font-style:italic; color:rgba(255,255,255,0.6);
+    font-size:0.9rem; color:var(--soft);
     max-width:280px; line-height:1.7;
   }
 
   .foot-note{
-    margin-top:60px; padding-top:24px; border-top:1px solid rgba(255,255,255,0.16);
-    font-size:0.78rem; font-style:italic; color:rgba(255,255,255,0.5);
+    margin-top:50px; padding-top:24px; border-top:1px solid var(--line);
+    font-size:0.78rem; color:var(--soft);
     display:flex; justify-content:space-between; flex-wrap:wrap; gap:10px;
   }
 
@@ -536,53 +434,37 @@
 
   <!-- HERO -->
   <section class="hero" id="accueil">
-    <canvas class="hero-canvas" id="clusterCanvas"></canvas>
+    <div class="hero-glow"></div>
     <div class="wrap hero-inner">
-      <div class="hero-tag"><span class="rule"></span>Statistiques · Data · Terrain</div>
       <h1>Ndeye Ramatoulaye<br><span class="accent">Ndoye Fall</span></h1>
-      <p class="hero-role">Élève ingénieure statisticienne économiste — ENSAE Dakar</p>
-      <p class="hero-pitch"><strong>Moi, c'est Ramatoulaye.</strong> Je prends les données à l'état brut — un tableau Excel, un questionnaire de terrain, un flux en temps réel — et j'en fais des décisions. Bilingue français-anglais, formée à l'ENSAE, rodée aux enquêtes de terrain avec l'ANSD et l'UNHCR.</p>
+      <p class="hero-role">Ingénieure Statisticienne Économiste en fin de formation à l'ENSAE Pierre Ndiaye, Dakar</p>
+      <p class="hero-pitch"><strong>Moi, c'est Ramatoulaye.</strong> Je prends les données à l'état brut, un tableau Excel, un questionnaire de terrain, un flux en temps réel, et j'en fais des décisions. Bilingue français anglais, formée à l'ENSAE, rodée aux enquêtes de terrain avec l'ANSD et l'UNHCR.</p>
       <div class="hero-actions">
-        <a href="#projets" class="btn btn-solid">Voir mes projets</a>
-        <a href="assets/CV_Ndeye_Ramatoulaye_Fall.pdf" class="btn btn-outline" download>Télécharger mon CV</a>
+        <a href="CV_NRNF.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+        <a href="#projets" class="btn btn-outline">Voir mes projets</a>
+        <a href="#contact" class="btn btn-outline">Me contacter</a>
       </div>
     </div>
-    <div class="hero-scroll"><span>Scroll</span><span class="line"></span></div>
   </section>
 
   <!-- PROFIL / ABOUT -->
   <section id="profil">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot" style="background:var(--blue)"></span>Profil</div>
-      <h2 class="section-title reveal">Rigueur académique, réflexes de terrain</h2>
-      <p class="section-lede reveal">Un parcours construit à l'intersection de la théorie statistique et de la pratique — sur le terrain comme sur les modèles.</p>
+      <div class="eyebrow">Profil</div>
+      <h2 class="section-title reveal">Rigueur académique, data science, IA et innovation au service de l'impact social</h2>
+      <p class="section-lede reveal">À l'intersection de la théorie statistique, de l'entrepreneuriat social, de la data science et de l'IA.</p>
 
-      <div class="about-grid">
-        <div class="about-text reveal">
-          <p>Deux mondes se croisent dans ma formation : la rigueur des salles de cours de l'<strong>ENSAE</strong> — économétrie, séries temporelles, modélisation — et la réalité du terrain, carnet KoboCollect en main, dans les ménages de Matam ou les entreprises accompagnées par le <strong>BMN</strong>.</p>
-          <p><strong>Bilingue français-anglais</strong>, je passe sans effort d'un rapport en anglais à une note de synthèse en français. Ce qui m'anime : transformer une base de données brute en une histoire qu'on peut raconter à un décideur. Je cherche aujourd'hui un stage en analyse de données, gestion de projets ou finance.</p>
-        </div>
-        <div class="reveal">
-          <div class="fact-card">
-            <div class="fact-label">Formation</div>
-            <div class="fact-value">Ingénieur Statisticien Économiste · ENSAE (2024–2027)</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-label">Localisation</div>
-            <div class="fact-value">Niary Tally, Dakar, Sénégal</div>
-          </div>
-          <div class="fact-card">
-            <div class="fact-label">Langues</div>
-            <div class="fact-value">Bilingue français-anglais · Wolof natif · Hassaniya B2</div>
-          </div>
-        </div>
+      <div class="about-text reveal" style="max-width:74ch;">
+        <p>Passionnée de <strong>data science</strong> et d'<strong>intelligence artificielle</strong>, je crois profondément que la donnée et la technologie peuvent nourrir des décisions plus justes et faire émerger des solutions innovantes à fort impact social. Mon objectif : mettre la data au service du bien commun, le <strong>data for good</strong>.</p>
+        <p>Je m'intéresse particulièrement à l'<strong>économie du développement</strong> et à la <strong>biostatistique</strong>, deux terrains où la rigueur statistique rencontre des enjeux humains concrets. Bilingue français anglais, formée à l'ENSAE, je suis ouverte aux collaborations pour mettre mes compétences à disposition, construire des solutions innovantes et prendre des décisions data driven.</p>
       </div>
 
       <div class="qualities reveal">
-        <span class="chip"><span class="dot" style="background:var(--navy)"></span>Polyvalence</span>
-        <span class="chip"><span class="dot" style="background:var(--blue)"></span>Organisation</span>
-        <span class="chip"><span class="dot" style="background:var(--blue-mid)"></span>Rigueur</span>
-        <span class="chip"><span class="dot" style="background:var(--blue-soft)"></span>Esprit d'équipe</span>
+        <span class="chip">Data for good</span>
+        <span class="chip">AI enthusiast</span>
+        <span class="chip">Économie du développement</span>
+        <span class="chip">Biostatistique</span>
+        <span class="chip">Esprit d'équipe</span>
       </div>
     </div>
   </section>
@@ -590,75 +472,84 @@
   <!-- PARCOURS / TIMELINE -->
   <section id="parcours">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot" style="background:var(--blue)"></span>Parcours</div>
-      <h2 class="section-title reveal">Formation & expérience</h2>
-      <p class="section-lede reveal">Une trajectoire qui commence par une série S2 et n'a plus arrêté d'additionner : cours, enquêtes, engagement associatif.</p>
+      <div class="eyebrow">Parcours</div>
+      <h2 class="section-title reveal">Expérience professionnelle</h2>
+      <p class="section-lede reveal">Des enquêtes de terrain aux partenariats institutionnels, une pratique construite mission après mission.</p>
 
       <div class="timeline">
         <div class="t-item reveal">
-          <span class="t-dot" style="background:var(--blue-soft)"></span>
-          <span class="t-year">2020</span>
-          <div class="t-title">Baccalauréat Scientifique — Série S2</div>
-          <div class="t-org">Lycée de Keur Massar · Mention Assez bien</div>
-        </div>
-
-        <div class="t-item reveal">
-          <span class="t-dot" style="background:var(--blue-mid)"></span>
-          <span class="t-year">2021 – 2024</span>
-          <div class="t-title">Licence en Analyse et Politiques Économiques</div>
-          <div class="t-org">Université Cheikh Anta Diop de Dakar — FASEG · Mention Assez bien</div>
-          <div class="badge-row"><span class="org-badge">UCAD</span></div>
-        </div>
-
-        <div class="t-item reveal">
-          <span class="t-dot" style="background:var(--blue)"></span>
-          <span class="t-year">2024 – 2027 · en cours</span>
-          <div class="t-title">Ingénieur Statisticien Économiste</div>
-          <div class="t-org">École Nationale de la Statistique et de l'Analyse Économique Pierre Ndiaye (ENSAE)</div>
-          <div class="badge-row"><span class="org-badge">ENSAE</span></div>
-        </div>
-
-        <div class="t-item reveal">
-          <span class="t-dot" style="background:var(--navy)"></span>
-          <span class="t-year">2025 – 2026</span>
-          <div class="t-title">Enquêtrice — Suivi d'impact BMN</div>
-          <div class="t-org">BMN Sénégal, Dakar</div>
-          <div class="t-desc">Enquête de suivi d'impact du Programme de Mise à Niveau des entreprises.</div>
-          <span class="t-tool">CSPro</span>
-          <div class="badge-row"><span class="org-badge">BMN</span><span class="org-badge alt">ANSD</span></div>
-        </div>
-
-        <div class="t-item reveal">
-          <span class="t-dot" style="background:var(--blue-soft)"></span>
-          <span class="t-year">Jan – Mai 2026</span>
-          <div class="t-title">Sponsorship & Partnership Coordinator — Hult Prize</div>
-          <div class="t-org">Hult Prize National Stage, Sénégal</div>
-          <div class="t-desc">Démarchage d'institutions (UNESCO, WAVE Digital Finance…) pour mobiliser des partenaires autour de la plus grande compétition d'entrepreneuriat social au monde.</div>
-          <div class="badge-row"><span class="org-badge">HULT PRIZE</span></div>
-        </div>
-
-        <div class="t-item reveal">
-          <span class="t-dot" style="background:var(--blue-mid)"></span>
+          <span class="t-dot"></span>
           <span class="t-year">2026</span>
-          <div class="t-title">Enquêtrice — ANSD / UNHCR</div>
+          <div class="t-title">Enquêtrice, ANSD / UNHCR</div>
           <div class="t-org">UNHCR, Matam, Sénégal</div>
           <div class="t-desc">Enquête de terrain sur les conditions de vie des ménages réfugiés.</div>
           <span class="t-tool">KoboCollect</span>
-          <div class="badge-row"><span class="org-badge">ANSD</span><span class="org-badge alt">UNHCR</span></div>
+        </div>
+
+        <div class="t-item reveal">
+          <span class="t-dot"></span>
+          <span class="t-year">Janvier à mai 2026</span>
+          <div class="t-title">Sponsorship & Partnership Coordinator, Hult Prize</div>
+          <div class="t-org">Hult Prize National Stage, Sénégal</div>
+          <div class="t-desc">Démarchage d'institutions (UNESCO, WAVE Digital Finance et d'autres) pour mobiliser des partenaires autour de la plus grande compétition d'entrepreneuriat social au monde.</div>
+        </div>
+
+        <div class="t-item reveal">
+          <span class="t-dot"></span>
+          <span class="t-year">2025 à 2026</span>
+          <div class="t-title">Enquêtrice, Suivi d'impact BMN</div>
+          <div class="t-org">BMN Sénégal, Dakar</div>
+          <div class="t-desc">Enquête de suivi d'impact du Programme de Mise à Niveau des entreprises.</div>
+          <span class="t-tool">CSPro</span>
         </div>
       </div>
 
-      <div class="certs reveal">
-        <div class="cert-chip">
+      <h2 class="section-title reveal" style="margin-top:70px;">Formation</h2>
+      <p class="section-lede reveal">Une trajectoire qui commence par une série S2 et n'a plus arrêté d'additionner.</p>
+
+      <div class="timeline">
+        <div class="t-item reveal">
+          <span class="t-dot"></span>
+          <span class="t-year">2024 à 2027, en cours</span>
+          <div class="t-title">Ingénieur Statisticien Économiste</div>
+          <div class="t-org">École Nationale de la Statistique et de l'Analyse Économique Pierre Ndiaye (ENSAE)</div>
+        </div>
+
+        <div class="t-item reveal">
+          <span class="t-dot"></span>
+          <span class="t-year">2021 à 2024</span>
+          <div class="t-title">Licence en Analyse et Politiques Économiques</div>
+          <div class="t-org">Université Cheikh Anta Diop de Dakar, FASEG, Mention Assez bien</div>
+        </div>
+
+        <div class="t-item reveal">
+          <span class="t-dot"></span>
+          <span class="t-year">2020</span>
+          <div class="t-title">Baccalauréat Scientifique, Série S2</div>
+          <div class="t-org">Lycée de Keur Massar, Mention Assez bien</div>
+        </div>
+      </div>
+
+      <div class="certs-grid reveal">
+        <div class="cert-card">
+          <span class="c-year">2026</span>
+          <span class="c-name">Atelier d'élaboration d'un lexique de statistiques sensibles au genre</span>
+          <span class="c-org">ENSAE</span>
+        </div>
+        <div class="cert-card">
+          <span class="c-year">2026</span>
+          <span class="c-name">Analyse de données spatiales et SIG</span>
+          <span class="c-org">Issa Diakité, enseignant chercheur, UCAD</span>
+        </div>
+        <div class="cert-card">
           <span class="c-year">2024</span>
           <span class="c-name">MEAL Essentials</span>
           <span class="c-org">Disaster Ready Organization</span>
         </div>
-        <div class="cert-chip">
+        <div class="cert-card">
           <span class="c-year">2018</span>
           <span class="c-name">English Access Microscholarship</span>
-          <span class="c-org">Ambassade des États-Unis au Sénégal</span>
-          <div class="badge-row"><span class="org-badge">US EMBASSY</span></div>
+          <span class="c-org">Ambassade des États Unis au Sénégal</span>
         </div>
       </div>
     </div>
@@ -667,147 +558,95 @@
   <!-- PROJETS -->
   <section id="projets">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot" style="background:var(--blue)"></span>Projets</div>
-      <h2 class="section-title reveal">Projets académiques & personnels</h2>
-      <p class="section-lede reveal">Six façons différentes de faire parler des données — d'un entrepôt AWS à une application qui recalcule votre trajet.</p>
+      <div class="eyebrow">Projets</div>
+      <h2 class="section-title reveal">Projets académiques et personnels</h2>
+      <p class="section-lede reveal">Neuf façons différentes de faire parler des données, d'un entrepôt AWS à une modélisation macroéconomique.</p>
 
       <div class="proj-grid">
 
-        <div class="proj-card reveal" style="--accent:var(--blue); --accent-a:var(--blue-a)">
-          <div class="proj-visual" style="background:var(--blue-pale)">
-            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <ellipse cx="40" cy="35" rx="22" ry="9" stroke="#0B2E59" stroke-width="2.2"/>
-              <path d="M18 35v22c0 5 10 9 22 9s22-4 22-9V35" stroke="#0B2E59" stroke-width="2.2"/>
-              <path d="M18 48c0 5 10 9 22 9s22-4 22-9" stroke="#0B2E59" stroke-width="2.2"/>
-              <path d="M62 46h26" stroke="#1D5FA8" stroke-width="2.2" marker-end="url(#arrow)"/>
-              <rect x="98" y="30" width="84" height="70" rx="6" stroke="#0B2E59" stroke-width="2.2"/>
-              <rect x="112" y="70" width="12" height="20" fill="#3D77BE"/>
-              <rect x="132" y="58" width="12" height="32" fill="#1D5FA8"/>
-              <rect x="152" y="45" width="12" height="45" fill="#0B2E59"/>
-              <defs><marker id="arrow" markerWidth="8" markerHeight="8" refX="4" refY="4" orient="auto"><path d="M0 0L8 4L0 8Z" fill="#1D5FA8"/></marker></defs>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <span class="proj-year">2025</span>
+        <div class="proj-block reveal">
+          <div>
             <span class="proj-tag">Ingénierie de données</span>
-            <div class="proj-title">Data warehouse de gestion des ventes — OLIST</div>
+            <div class="proj-title">Data warehouse de gestion des ventes, OLIST</div>
             <p class="proj-desc">Un entrepôt de données qui centralise les ventes e-commerce d'Olist pour transformer des lignes de transactions en décisions business.</p>
-            <p class="proj-stack">AWS S3 · Glue · Redshift · Kinesis (temps réel) · Power BI</p>
-            <div class="proj-links">
-              <a class="proj-link" href="https://github.com/Ben10-som/Data-warehouse-for-sales-analysis-/tree/main" target="_blank" rel="noopener">Repository ↗</a>
-            </div>
+            <p class="proj-stack">AWS S3 · Glue · Redshift · Kinesis · Power BI</p>
           </div>
+          <a class="proj-link" href="https://github.com/Ben10-som/Data-warehouse-for-sales-analysis-/tree/main" target="_blank" rel="noopener">Repository →</a>
         </div>
 
-        <div class="proj-card reveal" style="--accent:var(--navy); --accent-a:var(--navy-a)">
-          <div class="proj-visual" style="background:var(--blue-pale-2)">
-            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M20 120L20 20" stroke="#0B2E59" stroke-width="2"/>
-              <path d="M20 120L180 120" stroke="#0B2E59" stroke-width="2"/>
-              <circle cx="45" cy="95" r="4" fill="#3D77BE"/>
-              <circle cx="68" cy="80" r="4" fill="#3D77BE"/>
-              <circle cx="80" cy="100" r="4" fill="#3D77BE"/>
-              <circle cx="100" cy="65" r="4" fill="#3D77BE"/>
-              <circle cx="118" cy="75" r="4" fill="#3D77BE"/>
-              <circle cx="135" cy="50" r="4" fill="#3D77BE"/>
-              <circle cx="150" cy="60" r="4" fill="#3D77BE"/>
-              <circle cx="165" cy="38" r="4" fill="#3D77BE"/>
-              <path d="M35 105L172 40" stroke="#1D5FA8" stroke-width="2.4" stroke-dasharray="0"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <span class="proj-year">2026</span>
-            <span class="proj-tag">Machine learning · Régression</span>
+        <div class="proj-block reveal">
+          <div>
+            <span class="proj-tag">Machine learning</span>
             <div class="proj-title">Prévision des coûts médicaux</div>
-            <p class="proj-desc">Face à un tableau de primes d'assurance, un modèle de régression qui aide à estimer combien coûtera un patient — avant qu'il ne passe à la caisse.</p>
+            <p class="proj-desc">Face à un tableau de primes d'assurance, un modèle de régression qui aide à estimer combien coûtera un patient avant qu'il ne passe à la caisse.</p>
             <p class="proj-stack">EDA · Prétraitement · Comparaison de modèles de régression</p>
-            <div class="proj-links">
-              <a class="proj-link" href="https://sarahlaure.github.io/Analyse_Assurance_Sante/" target="_blank" rel="noopener">Voir l'analyse ↗</a>
-              <a class="proj-link" href="https://github.com/nncelina/ML_medical-coasts" target="_blank" rel="noopener">Repository ↗</a>
-            </div>
           </div>
+          <a class="proj-link" href="https://sarahlaure.github.io/Analyse_Assurance_Sante/" target="_blank" rel="noopener">Voir l'analyse →</a>
         </div>
 
-        <div class="proj-card reveal" style="--accent:var(--blue-mid); --accent-a:var(--blue-mid-a)">
-          <div class="proj-visual">
-            <img src="assets/img/dash1.jpeg" alt="Dashboard du projet de clustering de pays" loading="lazy">
-          </div>
-          <div class="proj-body">
-            <span class="proj-year">2026</span>
-            <span class="proj-tag">Machine learning · Clustering</span>
-            <div class="proj-title">Clustering de pays — ONG HELP</div>
-            <p class="proj-desc">Classer les pays du monde selon leur vulnérabilité réelle — pour qu'une ONG humanitaire sache où envoyer l'aide en priorité.</p>
+        <div class="proj-block reveal">
+          <div>
+            <span class="proj-tag">Machine learning</span>
+            <div class="proj-title">Clustering de pays, ONG HELP</div>
+            <p class="proj-desc">Classer les pays du monde selon leur vulnérabilité réelle pour qu'une ONG humanitaire sache où envoyer l'aide en priorité.</p>
             <p class="proj-stack">Classification non supervisée · Données socio-économiques</p>
-            <div class="proj-links">
-              <a class="proj-link" href="https://github.com/Vimdie/clustering_countries" target="_blank" rel="noopener">Repository ↗</a>
-            </div>
           </div>
+          <a class="proj-link" href="https://github.com/Vimdie/clustering_countries" target="_blank" rel="noopener">Repository →</a>
         </div>
 
-        <div class="proj-card reveal" style="--accent:var(--blue-soft); --accent-a:var(--blue-soft-a)">
-          <div class="proj-visual" style="background:var(--blue-pale)">
-            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <rect x="30" y="20" width="140" height="100" rx="8" stroke="#0B2E59" stroke-width="2.2"/>
-              <line x1="30" y1="42" x2="170" y2="42" stroke="#0B2E59" stroke-width="2"/>
-              <line x1="48" y1="60" x2="130" y2="60" stroke="#3D77BE" stroke-width="2"/>
-              <rect x="140" y="53" width="14" height="14" rx="3" stroke="#1D5FA8" stroke-width="2"/>
-              <line x1="48" y1="78" x2="130" y2="78" stroke="#3D77BE" stroke-width="2"/>
-              <rect x="140" y="71" width="14" height="14" rx="3" stroke="#1D5FA8" stroke-width="2"/>
-              <line x1="48" y1="96" x2="130" y2="96" stroke="#3D77BE" stroke-width="2"/>
-              <rect x="140" y="89" width="14" height="14" rx="3" fill="#1D5FA8"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <span class="proj-year">2025</span>
+        <div class="proj-block reveal">
+          <div>
             <span class="proj-tag">Application R Shiny</span>
             <div class="proj-title">Générateur de questionnaire avec R</div>
-            <p class="proj-desc">Trois façons de faire dire la même chose à R : un questionnaire. Test grandeur nature des packages shiny, shinyforms et shinysurvey.</p>
+            <p class="proj-desc">Trois façons de faire dire la même chose à R pour un questionnaire. Test grandeur nature des packages shiny, shinyforms et shinysurvey.</p>
             <p class="proj-stack">R · Shiny · shinyforms · shinysurvey</p>
-            <div class="proj-links">
-              <a class="proj-link" href="http://vimdie.shinyapps.io/SURVEY/" target="_blank" rel="noopener">Tester l'appli ↗</a>
-              <a class="proj-link" href="https://github.com/ameth08faye/Questionnaire-enquete-avec-R" target="_blank" rel="noopener">Repository ↗</a>
-            </div>
           </div>
+          <a class="proj-link" href="http://vimdie.shinyapps.io/SURVEY/" target="_blank" rel="noopener">Tester l'appli →</a>
         </div>
 
-        <div class="proj-card reveal" style="--accent:var(--blue); --accent-a:var(--blue-a)">
-          <div class="proj-visual" style="background:var(--blue-pale-2)">
-            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M15 115L185 115" stroke="#0B2E59" stroke-width="2"/>
-              <path d="M15 115L15 15" stroke="#0B2E59" stroke-width="2"/>
-              <path d="M15 100C40 95 55 105 70 85C85 65 95 90 110 70C125 50 140 60 155 40C165 28 175 30 185 20" stroke="#1D5FA8" stroke-width="2.6" fill="none"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <span class="proj-year">2025</span>
+        <div class="proj-block reveal">
+          <div>
             <span class="proj-tag">Séries temporelles</span>
-            <div class="proj-title">PIB trimestriel du Sénégal (2008–2025)</div>
-            <p class="proj-desc">Dix-sept ans de PIB trimestriel sénégalais, décortiqués pour comprendre — et anticiper — les cycles de l'économie locale.</p>
+            <div class="proj-title">PIB trimestriel du Sénégal, 2008 à 2025</div>
+            <p class="proj-desc">Dix sept ans de PIB trimestriel sénégalais, décortiqués pour comprendre et anticiper les cycles de l'économie locale.</p>
             <p class="proj-stack">Décomposition · Modélisation · Prévision</p>
-            <div class="proj-links">
-              <span class="proj-link muted">Étude académique</span>
-            </div>
           </div>
         </div>
 
-        <div class="proj-card reveal" style="--accent:var(--navy); --accent-a:var(--navy-a)">
-          <div class="proj-visual" style="background:var(--blue-pale)">
-            <svg viewBox="0 0 200 140" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M35 105C55 60 90 95 120 55C135 35 150 35 165 30" stroke="#1D5FA8" stroke-width="2.4" stroke-dasharray="5 5" fill="none"/>
-              <circle cx="35" cy="105" r="7" fill="#0B2E59"/>
-              <circle cx="165" cy="30" r="7" fill="#1D5FA8"/>
-              <path d="M35 105a7 7 0 1 0 0.01 0" stroke="#0B2E59"/>
-            </svg>
-          </div>
-          <div class="proj-body">
-            <span class="proj-year">2025</span>
-            <span class="proj-tag">Modélisation · Optimisation</span>
-            <div class="proj-title">Optimisation des trajets Keur Massar – Dakar</div>
+        <div class="proj-block reveal">
+          <div>
+            <span class="proj-tag">Modélisation, optimisation</span>
+            <div class="proj-title">Optimisation des trajets Keur Massar, Dakar</div>
             <p class="proj-desc">Entre Keur Massar et Dakar, chaque minute de trajet compte. Un modèle qui recalcule le meilleur chemin à partir de données CETUD et Google Maps.</p>
             <p class="proj-stack">R Shiny · Google Maps API · OSM Data · Modèles prédictifs</p>
-            <div class="proj-links">
-              <a class="proj-link" href="https://oscarshiny.shinyapps.io/Projet_optimisation/" target="_blank" rel="noopener">Tester l'appli ↗</a>
-            </div>
+          </div>
+          <a class="proj-link" href="https://oscarshiny.shinyapps.io/Projet_optimisation/" target="_blank" rel="noopener">Tester l'appli →</a>
+        </div>
+
+        <div class="proj-block reveal">
+          <div>
+            <span class="proj-tag">Bases de données avancées</span>
+            <div class="proj-title">EDUNODE</div>
+            <p class="proj-desc">Conception et développement d'une application web de gestion académique pour l'ENSAE, avec trois espaces utilisateurs (étudiant, professeur, administrateur).</p>
+            <p class="proj-stack">Python Flask · Microsoft SQL Server · PyODBC</p>
+          </div>
+        </div>
+
+        <div class="proj-block reveal">
+          <div>
+            <span class="proj-tag">Économétrie</span>
+            <div class="proj-title">Transmission de la politique monétaire au Sénégal</div>
+            <p class="proj-desc">Une approche par modélisation VAR et SVAR pour comprendre comment les décisions monétaires se transmettent à l'économie réelle.</p>
+            <p class="proj-stack">Séries temporelles · VAR · SVAR</p>
+          </div>
+        </div>
+
+        <div class="proj-block reveal">
+          <div>
+            <span class="proj-tag">Comportements macroéconomiques</span>
+            <div class="proj-title">L'essor de l'intelligence artificielle et l'économie mondiale</div>
+            <p class="proj-desc">L'essor de l'IA traduit il une transformation durable de l'économie mondiale, ou les prémices d'une bulle spéculative ?</p>
+            <p class="proj-stack">Analyse macroéconomique</p>
           </div>
         </div>
 
@@ -818,8 +657,8 @@
   <!-- COMPETENCES -->
   <section id="competences">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot" style="background:var(--blue)"></span>Compétences</div>
-      <h2 class="section-title reveal">Outils, compétences & langues</h2>
+      <div class="eyebrow">Compétences</div>
+      <h2 class="section-title reveal">Outils, compétences et langues</h2>
       <p class="section-lede reveal">Les outils qui passent de ma tête à l'écran, du terrain au tableau de bord.</p>
 
       <div class="skills-grid">
@@ -827,14 +666,14 @@
           <div class="skill-block reveal">
             <h3>Compétences clés</h3>
             <div class="tag-cloud">
-              <span class="tag">Traitement & analyse de données</span>
+              <span class="tag">Traitement et analyse de données</span>
               <span class="tag">Modélisation statistique</span>
               <span class="tag">Reporting</span>
               <span class="tag">Capacité rédactionnelle</span>
             </div>
           </div>
           <div class="skill-block reveal">
-            <h3>Logiciels & outils</h3>
+            <h3>Logiciels et outils</h3>
             <div class="tag-cloud">
               <span class="tag">RStudio</span>
               <span class="tag">Stata</span>
@@ -845,6 +684,19 @@
               <span class="tag">AWS</span>
               <span class="tag">VBA</span>
               <span class="tag">Suite MS Office</span>
+              <span class="tag">Canva</span>
+              <span class="tag">Scikit-learn</span>
+              <span class="tag">PyCharm</span>
+            </div>
+          </div>
+          <div class="skill-block reveal">
+            <h3>Langages informatiques</h3>
+            <div class="tag-cloud">
+              <span class="tag">R</span>
+              <span class="tag">Python</span>
+              <span class="tag">Jupyter Notebook</span>
+              <span class="tag">HTML</span>
+              <span class="tag">TeX</span>
             </div>
           </div>
         </div>
@@ -852,11 +704,11 @@
         <div class="skill-block reveal">
           <h3>Langues</h3>
           <div class="lang-row">
-            <div class="lang-head"><span class="lang-name">Français</span><span class="lang-level">Bilingue · C1</span></div>
+            <div class="lang-head"><span class="lang-name">Français</span><span class="lang-level">Bilingue, C1</span></div>
             <div class="lang-bar"><span style="width:85%"></span></div>
           </div>
           <div class="lang-row">
-            <div class="lang-head"><span class="lang-name">Anglais</span><span class="lang-level">Bilingue · C1</span></div>
+            <div class="lang-head"><span class="lang-name">Anglais</span><span class="lang-level">Bilingue, C1</span></div>
             <div class="lang-bar"><span style="width:85%"></span></div>
           </div>
           <div class="lang-row">
@@ -875,18 +727,17 @@
   <!-- ACTIVITES -->
   <section id="activites">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot" style="background:var(--blue)"></span>Engagement</div>
+      <div class="eyebrow">Engagement</div>
       <h2 class="section-title reveal">Activités extrascolaires</h2>
       <p class="section-lede reveal">Parce qu'un bon dossier statistique ne suffit pas toujours à convaincre un partenaire.</p>
       <div class="activity-card reveal">
         <div class="activity-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5 5.6.6-4.2 3.8 1.2 5.6L12 15l-5 3 1.2-5.6L4 8.6l5.6-.6z"/></svg>
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5 5.6.6-4.2 3.8 1.2 5.6L12 15l-5 3 1.2-5.6L4 8.6l5.6-.6z"/></svg>
         </div>
         <div>
-          <div class="activity-role">Jan – Mai 2026 · Sénégal</div>
-          <div class="activity-title">Sponsorship and Partnership Coordinator — Hult Prize National Stage</div>
-          <p class="activity-desc">Coordination des partenariats pour la plus grande compétition d'entrepreneuriat social du monde, axée sur les 17 objectifs de développement durable. Démarchage de grandes institutions — UNESCO, WAVE Digital Finance et d'autres — pour mobiliser des partenaires.</p>
-          <div class="badge-row"><span class="org-badge">HULT PRIZE</span></div>
+          <div class="activity-role">Janvier à mai 2026, Sénégal</div>
+          <div class="activity-title">Sponsorship and Partnership Coordinator, Hult Prize National Stage</div>
+          <p class="activity-desc">Coordination des partenariats pour la plus grande compétition d'entrepreneuriat social du monde, axée sur les 17 objectifs de développement durable. Démarchage de grandes institutions, dont l'UNESCO et WAVE Digital Finance, pour mobiliser des partenaires.</p>
         </div>
       </div>
     </div>
@@ -895,9 +746,13 @@
   <!-- CONTACT -->
   <section id="contact" class="contact-section">
     <div class="wrap">
-      <div class="eyebrow"><span class="dot" style="background:var(--blue-soft)"></span>Contact</div>
+      <div class="eyebrow">Contact</div>
       <h2 class="section-title">Discutons d'un stage ou d'un projet</h2>
-      <p class="section-lede">Un stage à pourvoir, une donnée à faire parler, un café à distance : écrivez-moi. Disponible pour un stage en analyse de données, gestion de projets ou finance.</p>
+      <p class="section-lede">Un stage à pourvoir, une donnée à faire parler, un café à distance : écrivez moi. Disponible pour un stage en analyse de données, gestion de projets ou finance.</p>
+
+      <div class="hero-actions" style="margin-bottom:44px;">
+        <a href="CV_NRNF.pdf" class="btn btn-primary" download>Télécharger mon CV</a>
+      </div>
 
       <div class="contact-grid">
         <div class="contact-links">
@@ -917,13 +772,17 @@
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M9 19c-4.3 1.4-4.3-2.5-6-3m12 5v-3.4c0-1 .1-1.4-.5-2 2-.2 4.5-1 4.5-4.5a3.6 3.6 0 0 0-1-2.5 3.3 3.3 0 0 0-.1-2.5s-.9-.3-2.9 1a10 10 0 0 0-5.2 0C7.9 5.8 7 6.1 7 6.1a3.3 3.3 0 0 0-.1 2.5 3.6 3.6 0 0 0-1 2.5c0 3.5 2.5 4.3 4.5 4.5-.3.3-.5.8-.5 1.5V21"/></svg>
             GitHub
           </a>
+          <div class="contact-link" style="cursor:default;">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            Niary Tally, Dakar, Sénégal
+          </div>
         </div>
-        <div class="contact-meta">Niary Tally, Dakar — Sénégal<br>Ouverte à des opportunités à distance ou sur site.</div>
+        <div class="contact-meta">Ouverte à des opportunités à distance ou sur site.</div>
       </div>
 
       <div class="foot-note">
         <span>© 2026 Ndeye Ramatoulaye Ndoye Fall</span>
-        <span>Construit avec HTML, CSS & JS</span>
+        <span>Construit avec HTML, CSS et JS</span>
       </div>
     </div>
   </section>
@@ -931,7 +790,6 @@
 </main>
 
 <script>
-  // Scroll-spy active nav link
   const sections = document.querySelectorAll('main section[id]');
   const navA = document.querySelectorAll('.nav-links a[href^="#"]');
   const spy = new IntersectionObserver((entries) => {
@@ -943,95 +801,11 @@
   }, { rootMargin: '-45% 0px -45% 0px' });
   sections.forEach(s => spy.observe(s));
 
-  // Reveal on scroll
   const revealEls = document.querySelectorAll('.reveal');
   const revealer = new IntersectionObserver((entries) => {
     entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('in'); revealer.unobserve(e.target); } });
   }, { threshold: 0.12 });
   revealEls.forEach(el => revealer.observe(el));
-
-  // Hero cluster canvas — animated scatter that groups into clusters (blue tones)
-  (function(){
-    const canvas = document.getElementById('clusterCanvas');
-    const ctx = canvas.getContext('2d');
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    const colors = ['#0B2E59', '#1D5FA8', '#3D77BE', '#6C93C7'];
-    let W, H, dpr;
-    let points = [];
-    const N = window.innerWidth < 640 ? 40 : 76;
-
-    function resize(){
-      dpr = Math.min(window.devicePixelRatio || 1, 2);
-      W = canvas.parentElement.clientWidth;
-      H = canvas.parentElement.clientHeight;
-      canvas.width = W * dpr;
-      canvas.height = H * dpr;
-      canvas.style.width = W + 'px';
-      canvas.style.height = H + 'px';
-      ctx.setTransform(dpr,0,0,dpr,0,0);
-    }
-
-    function clusterCenters(){
-      const cx = W * 0.62, cy = H * 0.5, r = Math.min(W,H) * 0.34;
-      return [
-        { x: cx + r*0.55, y: cy - r*0.5 },
-        { x: cx + r*0.95, y: cy + r*0.25 },
-        { x: cx + r*0.15, y: cy + r*0.55 },
-        { x: cx - r*0.35, y: cy - r*0.15 }
-      ];
-    }
-
-    function init(){
-      resize();
-      const centers = clusterCenters();
-      points = Array.from({length:N}).map((_,i) => {
-        const c = centers[i % centers.length];
-        const spread = Math.min(W,H) * 0.13;
-        return {
-          cx: c.x, cy: c.y,
-          x: Math.random()*W, y: Math.random()*H,
-          tx: c.x + (Math.random()-0.5)*spread*2,
-          ty: c.y + (Math.random()-0.5)*spread*2,
-          r: 2 + Math.random()*2.4,
-          color: colors[i % colors.length],
-          phase: Math.random()*Math.PI*2,
-          speed: 0.004 + Math.random()*0.004
-        };
-      });
-    }
-
-    function draw(t){
-      ctx.clearRect(0,0,W,H);
-      points.forEach(p => {
-        const settle = Math.min(1, t/1800);
-        const wob = Math.sin(t*p.speed + p.phase) * (6*(1-settle*0.4));
-        const px = p.x + (p.tx - p.x)*settle + wob;
-        const py = p.y + (p.ty - p.y)*settle + Math.cos(t*p.speed*1.3 + p.phase)*4;
-        ctx.beginPath();
-        ctx.fillStyle = p.color;
-        ctx.globalAlpha = 0.5;
-        ctx.arc(px, py, p.r, 0, Math.PI*2);
-        ctx.fill();
-      });
-      ctx.globalAlpha = 1;
-    }
-
-    let start = null;
-    function frame(ts){
-      if(start === null) start = ts;
-      const t = ts - start;
-      draw(t);
-      if(!reduceMotion) requestAnimationFrame(frame);
-    }
-
-    init();
-    if(reduceMotion){
-      draw(3000);
-    } else {
-      requestAnimationFrame(frame);
-    }
-    window.addEventListener('resize', () => { init(); });
-  })();
 </script>
 
 </body>
