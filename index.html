@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" class="light-theme">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,6 +22,19 @@
     --maxw:1120px;
     --font:'Segoe UI', system-ui, Arial, sans-serif;
   }
+
+  html.light-theme{
+    --bg:#F7F9FC;
+    --bg-soft:#FFFFFF;
+    --card:#FFFFFF;
+    --card-hover:#EFF3F9;
+    --line:#E1E6EF;
+    --ink:#12182B;
+    --soft:#5B6478;
+    --soft-2:#333B4F;
+    --tool-bg:#EDF1F7;
+  }
+  :root{ --tool-bg:#0E1730; }
 
   *{ box-sizing:border-box; font-family:var(--font); }
   html{ scroll-behavior:smooth; }
@@ -148,6 +161,17 @@
   }
   .lang-switch button img{ width:18px; height:13px; border-radius:2px; }
   .lang-switch button.active-lang{ background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#04101F; }
+
+  .theme-switch{ display:flex; align-items:center; gap:4px; background:var(--card); border:1px solid var(--line); border-radius:999px; padding:3px; flex:none; }
+  .theme-switch button{
+    display:flex; align-items:center; justify-content:center;
+    background:transparent; border:none; cursor:pointer;
+    width:30px; height:30px; border-radius:999px;
+    color:var(--soft);
+    transition:background .2s ease, color .2s ease;
+  }
+  .theme-switch button svg{ width:16px; height:16px; }
+  .theme-switch button.active-theme{ background:linear-gradient(90deg, var(--accent), var(--accent2)); color:#04101F; }
 
   @media (max-width:720px){
     .nav-links{ gap:4px; }
@@ -331,6 +355,9 @@
     display:inline-flex; align-items:center; gap:6px;
   }
   .proj-link:hover{ color:var(--accent2); }
+  .proj-links{ display:flex; gap:14px; flex-wrap:wrap; justify-content:center; }
+  .cert-view{ font-size:0.78rem; font-weight:700; color:var(--accent); margin-top:4px; }
+  .cert-view:hover{ color:var(--accent2); }
 
   /* ---------- SKILLS ---------- */
   .skills-grid{
@@ -365,7 +392,7 @@
   .tool-icon{
     width:34px; height:34px; border-radius:8px;
     display:flex; align-items:center; justify-content:center;
-    background:#0E1730;
+    background:var(--tool-bg);
   }
   .tool-icon img{ width:20px; height:20px; }
   .tool-icon.fallback{
@@ -449,6 +476,14 @@
         <a href="#competences" data-en="Skills">Compétences</a>
         <a href="#contact" class="nav-cta" data-en="Contact">Contact</a>
       </nav>
+      <div class="theme-switch">
+        <button id="themeLight" class="active-theme" onclick="setTheme('light')" aria-label="Light mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+        <button id="themeDark" onclick="setTheme('dark')" aria-label="Dark mode">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+        </button>
+      </div>
       <div class="lang-switch">
         <button id="langFr" onclick="setLang('fr')"><img src="https://flagcdn.com/24x18/fr.png" alt="FR"><span>FR</span></button>
         <button id="langEn" class="active-lang" onclick="setLang('en')"><img src="https://flagcdn.com/24x18/gb.png" alt="EN"><span>EN</span></button>
@@ -551,6 +586,7 @@
           </div>
           <div class="t-title" data-en="Bachelor's in Economic Analysis and Policy">Licence en Analyse et Politiques Économiques</div>
           <div class="t-org" data-en="Cheikh Anta Diop University of Dakar, FASEG, Good standing honors">Université Cheikh Anta Diop de Dakar, FASEG, Mention Assez bien</div>
+          <a class="cert-view" href="https://vimdie.github.io/portfolio/licence.pdf" target="_blank" rel="noopener" data-en="View diploma →">Voir le diplôme →</a>
         </div>
 
         <div class="t-item reveal">
@@ -561,6 +597,7 @@
           </div>
           <div class="t-title" data-en="Scientific Baccalaureate, Series S2">Baccalauréat Scientifique, Série S2</div>
           <div class="t-org" data-en="Lycée de Keur Massar, Good standing honors">Lycée de Keur Massar, Mention Assez bien</div>
+          <a class="cert-view" href="https://vimdie.github.io/portfolio/baccalaureat.pdf" target="_blank" rel="noopener" data-en="View diploma →">Voir le diplôme →</a>
         </div>
       </div>
 
@@ -572,6 +609,7 @@
           <span class="c-year">2026</span>
           <span class="c-name" data-en="Certificate in gender-sensitive statistics vocabulary">Attestation de participation à l'élaboration d'un lexique de statistiques sensibles au genre</span>
           <span class="c-org">ENSAE</span>
+          <a class="cert-view" href="https://vimdie.github.io/portfolio/lexique_genre.pdf" target="_blank" rel="noopener" data-en="View →">Voir →</a>
         </div>
         <div class="cert-card" style="align-items:flex-start; text-align:left;">
           <span class="c-year">2026</span>
@@ -582,11 +620,13 @@
           <span class="c-year">2024</span>
           <span class="c-name" data-en="Certificate in MEAL Essentials">Certificat en MEAL Essentials</span>
           <span class="c-org">Disaster Ready Organization</span>
+          <a class="cert-view" href="https://vimdie.github.io/portfolio/meal_essentials.pdf" target="_blank" rel="noopener" data-en="View →">Voir →</a>
         </div>
         <div class="cert-card" style="align-items:flex-start; text-align:left;">
           <span class="c-year">2018</span>
           <span class="c-name" data-en="Certificate in English, English Access Microscholarship">Certificat en anglais, English Access Microscholarship</span>
           <span class="c-org" data-en="United States Embassy in Senegal">Ambassade des États Unis au Sénégal</span>
+          <a class="cert-view" href="https://vimdie.github.io/portfolio/english_access.pdf" target="_blank" rel="noopener" data-en="View →">Voir →</a>
         </div>
       </div>
     </div>
@@ -618,7 +658,10 @@
             <p class="proj-desc" data-en="Given a table of insurance premiums, a regression model that helps estimate how much a patient will cost before they reach the counter.">Face à un tableau de primes d'assurance, un modèle de régression qui aide à estimer combien coûtera un patient avant qu'il ne passe à la caisse.</p>
             <p class="proj-stack" data-en="EDA · Preprocessing · Regression model comparison">EDA · Prétraitement · Comparaison de modèles de régression</p>
           </div>
-          <a class="proj-link" href="https://sarahlaure.github.io/Analyse_Assurance_Sante/" target="_blank" rel="noopener" data-en="See the analysis →">Voir l'analyse →</a>
+          <div class="proj-links">
+            <a class="proj-link" href="https://sarahlaure.github.io/Analyse_Assurance_Sante/" target="_blank" rel="noopener" data-en="See the analysis →">Voir l'analyse →</a>
+            <a class="proj-link" href="https://comforting-sherbet-b5f901.netlify.app/" target="_blank" rel="noopener" data-en="Try the app →">Tester l'appli →</a>
+          </div>
         </div>
 
         <div class="proj-block reveal">
@@ -638,7 +681,10 @@
             <p class="proj-desc" data-en="Three ways to make R say the same thing for a questionnaire. Full-scale test of the shiny, shinyforms and shinysurvey packages.">Trois façons de faire dire la même chose à R pour un questionnaire. Test grandeur nature des packages shiny, shinyforms et shinysurvey.</p>
             <p class="proj-stack">R · Shiny · shinyforms · shinysurvey</p>
           </div>
-          <a class="proj-link" href="http://vimdie.shinyapps.io/SURVEY/" target="_blank" rel="noopener" data-en="Try the app →">Tester l'appli →</a>
+          <div class="proj-links">
+            <a class="proj-link" href="http://vimdie.shinyapps.io/SURVEY/" target="_blank" rel="noopener" data-en="Try the app →">Tester l'appli →</a>
+            <a class="proj-link" href="https://github.com/Vimdie/Academic-projects/tree/main/Projet_Cr%C3%A9ation%20de%20Questionnaire_avec_R/Projet_Questionnaire_avec_R%20FINAL" target="_blank" rel="noopener" data-en="Repository →">Repository →</a>
+          </div>
         </div>
 
         <div class="proj-block reveal">
@@ -648,6 +694,7 @@
             <p class="proj-desc" data-en="Seventeen years of Senegal's quarterly GDP, broken down to understand and anticipate the local economy's cycles.">Dix sept ans de PIB trimestriel sénégalais, décortiqués pour comprendre et anticiper les cycles de l'économie locale.</p>
             <p class="proj-stack" data-en="Decomposition · Modeling · Forecasting">Décomposition · Modélisation · Prévision</p>
           </div>
+          <a class="proj-link" href="https://github.com/Vimdie/Academic-projects/tree/main/Analyse%20de%20la%20s%C3%A9rie%20du%20PIB%20trimestriel%20du%20S%C3%A9n%C3%A9gal%20Mod%C3%A9lisation%20et%20pr%C3%A9visions" target="_blank" rel="noopener" data-en="Repository →">Repository →</a>
         </div>
 
         <div class="proj-block reveal">
@@ -667,6 +714,7 @@
             <p class="proj-desc" data-en="Design and development of an academic management web application for ENSAE, with three user spaces (student, teacher, administrator).">Conception et développement d'une application web de gestion académique pour l'ENSAE, avec trois espaces utilisateurs (étudiant, professeur, administrateur).</p>
             <p class="proj-stack">Python Flask · Microsoft SQL Server · PyODBC</p>
           </div>
+          <a class="proj-link" href="https://github.com/Vimdie/EDUNODE_BDDA" target="_blank" rel="noopener" data-en="Repository →">Repository →</a>
         </div>
 
         <div class="proj-block reveal">
@@ -676,6 +724,7 @@
             <p class="proj-desc" data-en="A VAR and SVAR modeling approach to understand how monetary decisions are transmitted to the real economy.">Une approche par modélisation VAR et SVAR pour comprendre comment les décisions monétaires se transmettent à l'économie réelle.</p>
             <p class="proj-stack" data-en="Time series · VAR · SVAR">Séries temporelles · VAR · SVAR</p>
           </div>
+          <a class="proj-link" href="https://github.com/Vimdie/Transmission_PM_VAR_SVAR" target="_blank" rel="noopener" data-en="Repository →">Repository →</a>
         </div>
 
         <div class="proj-block reveal">
@@ -685,6 +734,7 @@
             <p class="proj-desc" data-en="Does the rise of AI reflect a lasting transformation of the global economy, or the early signs of a speculative bubble?">L'essor de l'IA traduit il une transformation durable de l'économie mondiale, ou les prémices d'une bulle spéculative ?</p>
             <p class="proj-stack" data-en="Macroeconomic analysis">Analyse macroéconomique</p>
           </div>
+          <a class="proj-link" href="https://vimdie.github.io/portfolio/projet_comp_macro.pdf" target="_blank" rel="noopener" data-en="View report →">Voir le rapport →</a>
         </div>
 
       </div>
@@ -772,12 +822,13 @@
       <p class="section-lede reveal" data-en="Because a solid statistical record isn't always enough to win over a partner.">Parce qu'un bon dossier statistique ne suffit pas toujours à convaincre un partenaire.</p>
       <div class="activity-card reveal">
         <div class="activity-icon" aria-hidden="true">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3l2.4 5 5.6.6-4.2 3.8 1.2 5.6L12 15l-5 3 1.2-5.6L4 8.6l5.6-.6z"/></svg>
+          <img src="https://logo.clearbit.com/hultprize.org" alt="Hult Prize" loading="lazy" style="width:100%;height:100%;object-fit:contain;border-radius:12px;background:#fff;" onerror="let p=this.parentElement;p.innerHTML='HULT';p.style.fontWeight='800';p.style.fontSize='0.6rem';">
         </div>
         <div>
           <div class="activity-role" data-en="January to May 2026, Senegal">Janvier à mai 2026, Sénégal</div>
           <div class="activity-title" data-en="Sponsorship and Partnership Coordinator, Hult Prize National Stage">Sponsorship and Partnership Coordinator, Hult Prize National Stage</div>
           <p class="activity-desc" data-en="Coordinating partnerships for the world's largest social entrepreneurship competition, centered on the 17 sustainable development goals. Outreach to major institutions, including UNESCO and WAVE Digital Finance, to mobilize partners.">Coordination des partenariats pour la plus grande compétition d'entrepreneuriat social du monde, axée sur les 17 objectifs de développement durable. Démarchage de grandes institutions, dont l'UNESCO et WAVE Digital Finance, pour mobiliser des partenaires.</p>
+          <a class="cert-view" href="https://vimdie.github.io/portfolio/hultprize.jpeg" target="_blank" rel="noopener" data-en="View certificate →">Voir le certificat →</a>
         </div>
       </div>
     </div>
@@ -814,7 +865,7 @@
           </a>
           <div class="contact-link" style="cursor:default;">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg>
-            <span data-en="Niary Tally, Dakar, Senegal">Niary Tally, Dakar, Sénégal</span>
+            <span data-en="Dakar, Senegal">Dakar, Sénégal</span>
           </div>
         </div>
         <div class="contact-meta" data-en="Open to remote or on-site opportunities.">Ouverte à des opportunités à distance ou sur site.</div>
@@ -855,6 +906,12 @@
     document.documentElement.lang = target;
     document.getElementById('langFr').classList.toggle('active-lang', target === 'fr');
     document.getElementById('langEn').classList.toggle('active-lang', target === 'en');
+  }
+
+  function setTheme(target){
+    document.documentElement.classList.toggle('light-theme', target === 'light');
+    document.getElementById('themeLight').classList.toggle('active-theme', target === 'light');
+    document.getElementById('themeDark').classList.toggle('active-theme', target === 'dark');
   }
 
   setLang('en');
